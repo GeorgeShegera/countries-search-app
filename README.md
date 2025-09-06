@@ -54,5 +54,6 @@ Data is fetched from a REST API and cached in the app for performance.
 ```bash
 git clone https://github.com/GeorgeShegera/countries-search-app.git
 cd countries-search-app
+npm i
 npm run start
 ```

@@ -1,0 +1,42 @@
+<div class="country-card">
+  <div class="country-card__header">
+    <div class="country-card__header-title">
+      <h3 class="country-card__title">{{ country.details.commonName }}</h3>
+      <span class="country-card__code-badge" aria-label="Country code">{{ country.details.countryCode }}</span>
+    </div>
+    <p class="country-card__subtitle">
+      {{ country.details.officialName }}
+    </p>
+  </div>
+
+  <div class="country-card__meta">
+    <div class="chip">
+      <span>{{ country.details.region }}</span>
+    </div>
+
+    <div class="chip">
+      <span>{{ country.details.borders.length || 0 }} borders</span>
+    </div>
+  </div>
+
+  <div class="country-card__holiday">
+    <div class="country-card__holiday-label">
+      <span>Next holiday:</span>
+    </div>
+    <div class="country-card__holiday-content">
+      @if(country.holidays.length !== 0){
+        <div class="country-card__holiday-name">{{ country.holidays[0].name }}</div>
+        <div class="country-card__holiday-date">{{ country.holidays[0].date | dateFormat: "custom"}}</div>
+      }
+      @else {
+        <div class="country-card__holiday-empty">No upcoming holidays found.</div>
+      }
+    </div>
+  </div>
+
+  <div class="country-card__actions">
+    <a class="country-card__btn" [routerLink]="['/country', country.details.countryCode]">
+      View country
+    </a>
+  </div>
+</div>

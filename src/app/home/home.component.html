@@ -1,0 +1,20 @@
+<div class="countries-container">
+    <input 
+    type="text"
+    [formControl]="searchControl"
+    name="countrySearch"
+    placeholder="Enter a country name"
+    class="search-country-input"
+    />
+    
+    <div class="countries-wrapper">
+        @if(visibleCountries?.length !== 0) {
+            @for(country of visibleCountries; track country.details.countryCode){
+                <app-country-card [country]="country"></app-country-card>
+            }
+        }
+        @else {
+            <p class="countries-not-found">No countries were found.</p>
+        }
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="country-container">
+    <a class="btn-back" [routerLink]="['/']">Back</a>
+
+    <div *ngIf="country" class="country-page">
+        <!-- Header -->
+        <header class="country-page__header">
+            <h1 class="country-page__title">
+            {{ country.details.commonName }}
+            <span class="country-page__code">({{ country.details.countryCode }})</span>
+            </h1>
+            <p class="country-page__subtitle">{{ country.details.officialName }}</p>
+            <div class="country-page__meta">
+            <span class="chip">{{ country.details.region }}</span>
+            <span class="chip">{{ country.details.borders.length }} borders</span>
+            </div>
+        </header>
+
+        <!-- Holidays -->
+        <section class="country-page__holidays">
+            <div class="country-page__holidays-header">
+                <h2 class="section-title">Upcoming Holidays</h2>
+            </div>
+
+            <div class="holiday-list">
+            <div *ngFor="let holiday of country.holidays" class="holiday-card">
+                <div class="holiday-card__date">{{ holiday.date | dateFormat: "long" }}</div>
+                <div class="holiday-card__info">
+                <div class="holiday-card__name">{{ holiday.name }}</div>
+                <div class="holiday-card__local">{{ holiday.localName }}</div>
+                </div>
+            </div>
+            </div>
+
+            <div class="holiday-pagination">
+                <button class="holiday-pagination__btn holiday-pagination__btn--first" (click)="changeYear(-1)"><</button>
+                @if(curYear - minYear >= 3){
+                    <button class="holiday-pagination__btn" (click)="setYear(minYear)">{{minYear}}</button>
+                    <button class="holiday-pagination__btn">...</button>
+                }
+                @if(curYear !== minYear) {
+                    <button class="holiday-pagination__btn" (click)="setYear(curYear - 1)">{{curYear - 1}}</button>
+                }
+                <button class="holiday-pagination__btn">{{curYear}}</button>
+                @if(curYear !== maxYear) {
+                    <button class="holiday-pagination__btn" (click)="setYear(curYear + 1)">{{curYear + 1}}</button>
+                }
+                @if(maxYear - curYear >= 3){
+                    <button class="holiday-pagination__btn">...</button>
+                    <button class="holiday-pagination__btn" (click)="setYear(maxYear)">{{maxYear}}</button>
+                }
+                    <button class="holiday-pagination__btn holiday-pagination__btn--last" (click)="changeYear(1)">></button>
+                <div class="holiday-year">
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+

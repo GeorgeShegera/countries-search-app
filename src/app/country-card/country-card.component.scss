@@ -1,0 +1,68 @@
+.country-card{
+  background-color: var(--color-gray-1);
+  padding: 2rem;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  min-width: 30rem;
+  max-width: 40rem;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  &__header{
+    &-title{
+      display: flex;
+      gap: 1rem;
+    }
+  }
+
+  &__code-badge{
+    background-color: var(--color-accent);
+    border-radius: 8px;
+    font-size: 1.4rem;
+    padding: 0.2rem 0.8rem;
+    
+    display: flex;
+    align-items: center;
+  }
+
+  &__title{
+    font-weight: 700;
+  }
+
+  &__subtitle{
+    color: var(--color-gray-2);
+    opacity: 0.6;
+  }
+
+
+  &__meta{
+    margin-top: auto;
+    display: flex;
+    gap: 4.2rem;
+  }
+
+  &__holiday{    
+    background-color: var(--color-accent-light);
+    padding: 0.1rem 0.8rem;
+    border-radius: 8px;
+  }
+
+  &__actions{
+    display: flex;
+    justify-content: center;
+  }
+
+  &__btn:link,
+  &__btn:active {
+    display: block;
+    margin-top: 0.8rem;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    color: var(--color-text);
+    background-color: var(--color-accent);
+  }
+}

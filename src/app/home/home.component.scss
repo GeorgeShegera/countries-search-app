@@ -1,0 +1,28 @@
+.countries-container{
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.countries-wrapper {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.countries-not-found {
+    font-weight: 600;
+    font-size: 2.4rem;
+}
+
+.search-country-input {
+    outline: none;
+    width: 40%;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    align-self: center;
+}

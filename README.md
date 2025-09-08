@@ -40,7 +40,7 @@ Data is fetched from a REST API and cached in the app for performance.
 
 ## Technologies
 
-- **Angular 17** – Frontend framework
+- **Angular 20** – Frontend framework
 - **TypeScript** – Language for the app
 - **RxJS** – Reactive programming for HTTP and state
 - **SCSS** – Styling
